@@ -1,0 +1,34 @@
+#!/bin/bash
+# This script prints the github url which corresponds to the relative reference
+# passed as an argument.
+#
+USERNAME=WarrenTheRabbit
+REPOSITORY_NAME=holbertonschool-low_level_programming
+COMMIT_HASH="$(git rev-parse $1)"
+
+echo ''
+echo Usage Note:
+echo Pass a commit by relative reference as an argument
+echo to this utility to print out the commit\'s GitHub URL.
+echo
+echo Examples of relative references
+echo ---------------------------------
+echo HEAD is the most recent commit.
+echo HEAD^ is the second most recent.
+echo HEAD^^ is the third most recent.
+echo HEAD~1 is the second most recent.
+echo HEAD~2 is the third most recent.
+echo
+echo Current variable values
+echo --------------------------------
+echo "USERNAME=$USERNAME"
+echo "REPOSITORY=$REPOSITORY_NAME"
+echo "calculated commit hash=$COMMIT_HASH"
+echo ""
+echo If required set USERNAME and REPOSITORY to the appropriate values.
+echo To set a variable, enter '`VARIABLE_NAME=variable_value`' in the shell.
+echo
+echo Commit URL
+echo ------------------------------------------------------------------------------------------
+echo "https://github.com/$USERNAME/$REPOSITORY/commit/$COMMIT_HASH?diff=unified"
+echo ------------------------------------------------------------------------------------------
